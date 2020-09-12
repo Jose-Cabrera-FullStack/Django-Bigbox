@@ -14,11 +14,15 @@
 <body>
 
     <div class="container mt-5">
-    <ul>
-        {% for box in boxes%}
-            <ul><li><a href={% if box.slug %}{{box.slug}}{% else %}{{box.id}}{% endif %}>{{box.name}}</a> </li></ul>
-        {% endfor%}
-    </ul>
+    <h1>Boxes</h1>
+    <br>
+    <br>
+    <br>
+    {% for box in boxes%}
+        <ul>
+        <li>Box Name: <a href={% if box.slug %}{{box.slug}}{% else %}{{box.id}}{% endif %}>{{box.name}}</a> </li>
+        </ul>
+    {% endfor%}
     </div>
 
 </body>

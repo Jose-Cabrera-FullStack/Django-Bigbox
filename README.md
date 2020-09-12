@@ -9,8 +9,10 @@ appdirs==1.4.4
 astroid==2.4.2
 colorama==0.4.3
 distlib==0.3.1
+dj-database-url==0.5.0
 Django==2.2
 filelock==3.0.12
+gunicorn==20.0.4
 isort==5.5.2
 lazy-object-proxy==1.4.3
 mccabe==0.6.1
@@ -20,6 +22,7 @@ psycopg2-binary==2.8.6
 pylint==2.6.0
 pylint-django==2.3.0
 pylint-plugin-utils==0.6
+python-decouple==3.3
 pytz==2020.1
 six==1.15.0
 sqlparse==0.3.1

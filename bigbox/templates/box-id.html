@@ -17,20 +17,22 @@
         {% for item in box%}
         <p>activities:{{item.name}}</p>
         <ul>
-            <li>{{item.name}}</li>
-            <li>{{item.internal_name}}</li>
-            <li>{{item.description}}</li>
-            <li>{{item.price}}</li>
-            <li>{{item.purchase_available}}</li>
+            <li>Name: {{item.name}}</li>
+            <li>Internal Name: {{item.internal_name}}</li>
+            <li>Description: {{item.description}}</li>
+            <li>Price: {{item.price}}</li>
+            <li>Purchase Available: {{item.purchase_available}}</li>
             <ul>
+            <br>
+                <h4>Activities</h4>
                 {% for activity in item.activities.all|slice:":5" %}
                     <li>{{ activity }}</li>
                 {% endfor %}
             <ul/>
             <br>
+            </ul>
             <a href="{%url "activities" item.id%}">Activities</a>
         {% endfor%}
-    </ul>
     </div>
 
 </body>

@@ -14,14 +14,15 @@
 <body>
 
     <div class="container mt-5">
-    <h1>Activity HOLS</h1>
+    <h1>Activity</h1>
     <br>
         {% for item in activity%}
         <ul>
-            <li>{{item.name}}</li>
-            <li>{{item.internal_name}}</li>
-            <li>{{item.description}}</li>
-            <li>{{item.category}}</li>
+            <li>Name: {{item.name}}</li>
+            <li>Internal Name: {{item.internal_name}}</li>
+            <li>Description: {{item.description}}</li>
+            <li>Category :{{item.category}}</li>
+            <br>
             <br>
             <h5>Reasons:</h5>
             {% for reason in item.reasons.all%}
@@ -32,6 +33,11 @@
         </ul>
 
         {% endfor%}
+        
+
+        <br>
+        <br>
+        <a href={%url 'box'%}>Volver a Box</a>
     
     </div>
 

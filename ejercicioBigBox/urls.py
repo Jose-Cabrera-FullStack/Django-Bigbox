@@ -16,12 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from bigbox import views as bigbox_views
+from django.views.generic.base import RedirectView
+
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path(
         'admin/', 
         admin.site.urls,
         name='admin'),
+    path(
+        '', 
+        bigbox_views.redirect,
+        name=''),
 
     path(
         'box/', 
@@ -44,4 +52,4 @@ urlpatterns = [
     path('box/<str:slug>', 
         bigbox_views.slug,
         name='slug'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

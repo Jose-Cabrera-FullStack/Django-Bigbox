@@ -1,0 +1,1 @@
+web: gunicorn ejercicioBigBox.wsgi --log-file -
