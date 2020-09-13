@@ -14,15 +14,15 @@
 <body>
 
     <div class="container mt-5">
-    <h1>Activities</h1>
+    <h1>Activities prueba</h1>
     <br>
-        {% for activity in activities%}
-        {% for item in activity.activities.all%}
-
-        <ul><li><a href={%url 'activity' activity.id item.id %}>{{item.name}}</a></li></ul>
-
+    <ul>
+        {% for item in activities%}
+            <li>
+                <a href={%url 'activity' id item.id%}>{{item}}</a>
+            </li>
         {% endfor%}
-        {% endfor%}
+    </ul>
     </ul>
         <ul class="pagination justify-content-end">
         {% if activities.has_previous %}

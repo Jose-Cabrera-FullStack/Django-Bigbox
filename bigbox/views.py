@@ -27,12 +27,13 @@ def slug(request, slug):
     
 def box_activity(request, id):
     # List existing box_activity
-    activities = Box.objects.filter(pk=id)
-    activity=activities.all()
-    paginator = Paginator(activity,20)
+    box=Box.objects.get(pk=id)
+    activities = box.activities.all()
+    # activity=activities.all()
+    paginator = Paginator(activities,20)
     page_obj = request.GET.get('page')
     activities=paginator.get_page(page_obj)
-    return render(request,'box-activities.html',{'activities':activities})
+    return render(request,'box-activities.html',{'activities':activities,'id':id})
 
 def activity(request, id, section):
     # List existing activity
