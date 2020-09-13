@@ -18,8 +18,13 @@ def box(request):
 def box_id(request, id):
     # List existing box_id
     box = Box.objects.filter(id=id)
-    return render(request,'box-id.html',{'box':box})
+    return render(request,'box-id.html',{'box':box, 'id':id})
 
+def slug(request, slug):
+    # List existing slug
+    box = Box.objects.filter(slug=slug)
+    return render(request,'box-id.html',{'box':box, 'slug':slug})
+    
 def box_activity(request, id):
     # List existing box_activity
     activities = Box.objects.filter(pk=id)
@@ -36,8 +41,3 @@ def activity(request, id, section):
     page_obj = request.GET.get('page')
     activity=paginator.get_page(page_obj)
     return render(request,'activity.html',{'activity':activity})
-
-def slug(request, slug):
-    # List existing slug
-    box = Box.objects.filter(slug=slug)
-    return render(request,'box-id.html',{'box':box})
