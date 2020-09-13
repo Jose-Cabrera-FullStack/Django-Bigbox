@@ -14,8 +14,6 @@
 <body>
 
     <div class="container mt-5">
-    {% if slug %}
-        <h1>{{slug}} ID</h1>
         {% for item in box%}
         <p>activities:{{item.name}}</p>
         <ul>
@@ -24,7 +22,6 @@
             <li>Description: {{item.description}}</li>
             <li>Price: {{item.price}}</li>
             <li>Purchase Available: {{item.purchase_available}}</li>
-            <li>slug: {{item.slug}}</li>
             <ul>
             <br>
                 <h4>Activities</h4>
@@ -36,29 +33,6 @@
             </ul>
             <a href="{%url "activities" item.id%}">Activities</a>
         {% endfor%}
-    {% elif id %}
-        <h1>{{id}} ID</h1>
-        {% for item in box%}
-        <p>activities:{{item.name}}</p>
-        <ul>
-            <li>Name: {{item.name}}</li>
-            <li>Internal Name: {{item.internal_name}}</li>
-            <li>Description: {{item.description}}</li>
-            <li>Price: {{item.price}}</li>
-            <li>Purchase Available: {{item.purchase_available}}</li>
-            <li>slug: {{item.slug}}</li>
-            <ul>
-            <br>
-                <h4>Activities</h4>
-                {% for activity in item.activities.all|slice:":5" %}
-                    <li>{{ activity }}</li>
-                {% endfor %}
-            <ul/>
-            <br>
-            </ul>
-            <a href="{%url "activities" item.id%}">Activities</a>
-        {% endfor%}
-    {% endif %}
     </div>
 
 </body>
