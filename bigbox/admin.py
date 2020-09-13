@@ -18,6 +18,7 @@ class ActivityAdmin(admin.ModelAdmin):
     ]
 
     list_display = (
+        'id',
         'name', 
         'internal_name', 
         'description',
@@ -35,7 +36,7 @@ class ActivityAdmin(admin.ModelAdmin):
 class BoxAdmin(admin.ModelAdmin):
     """Box admin."""
  
-    list_display = (
+    list_display = ('id',
         'name', 
         'internal_name', 
         'description',
@@ -69,6 +70,7 @@ class BoxAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     """Category admin."""
     list_display = (
+        'id',
         'name', 
         'slug',
         'order',
@@ -86,6 +88,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class ReasonAdmin(admin.ModelAdmin):
     """Reason admin."""
     list_display = (
+        'id',
         'name', 
         'slug',
         'order',
